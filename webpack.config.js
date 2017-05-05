@@ -7,10 +7,11 @@ var outputPath = path.join(__dirname, 'dist');
 
 module.exports = {
     context: entryPath,
-    entry: './grafcanProvider.js',
+    entry: './index.js',
     output: {
         path: outputPath,
-        filename: 'grafcanProvider.js'
+        filename: 'grafcan-leaflet-geosearch.js',
+        library: 'GeoSearch'
     },
     resolve: {
       extensions: [".js"]
@@ -25,7 +26,8 @@ module.exports = {
             use: [{
                 loader: 'babel-loader',
                 options: {
-                    presets: ['es2015']
+                    presets: ['es2015'],
+                    plugins: ['transform-object-rest-spread']
                 }
             }]
           }]
@@ -35,4 +37,3 @@ module.exports = {
         contentBase: outputPath
     }
 };
-
