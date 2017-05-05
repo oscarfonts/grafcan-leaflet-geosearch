@@ -38,7 +38,7 @@ export default class Provider extends BaseProvider {
 
   parse({ data }) {
     const results = 'row' in data ? [...data.row] : [];
-    console.log(results.length);
+
     return results.map(this.removeCDATA).map(r => ({
       x: parseFloat(r.x),
       y: parseFloat(r.y),
