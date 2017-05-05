@@ -59,6 +59,7 @@ For details see https://github.com/smeijer/leaflet-geosearch#geosearchcontrol
 
 ## Development tasks
 
+* `npm install` download dependencies
 * `npm start` to run a debug server (watch, rebuild, autoreload)
 * `npm test` to run the tests
 * `npm run build` to generate the bundle in `dist/grafcan-leaflet-geosearch.js`
