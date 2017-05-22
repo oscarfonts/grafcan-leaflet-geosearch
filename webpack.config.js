@@ -11,13 +11,11 @@ module.exports = {
     output: {
         path: outputPath,
         filename: 'grafcan-leaflet-geosearch.js',
+        libraryTarget: 'umd',
         library: 'GeoSearch'
     },
     resolve: {
       extensions: [".js"]
-    },
-    externals: {
-        "leaflet": "L" // Don't include Leaflet in webpack bundle
     },
     module: {
         rules: [{
@@ -26,8 +24,7 @@ module.exports = {
             use: [{
                 loader: 'babel-loader',
                 options: {
-                    presets: ['es2015'],
-                    plugins: ['transform-object-rest-spread']
+                    presets: ['es2015']
                 }
             }]
           }]
