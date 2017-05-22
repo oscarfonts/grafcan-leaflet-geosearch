@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "description": "grafcan-leaflet-geosearch",
-  "main": "src/index.js",
+  "main": "dist/grafcan-leaflet-geosearch.js",
   "scripts": {
     "start": "webpack-dev-server --inline --hot",
     "test": "karma start",
