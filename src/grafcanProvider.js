@@ -6,15 +6,13 @@ export default class Provider extends BaseProvider {
   endpoint({ query, protocol } = {}) {
     const { params } = this.options;
 
-    const paramString = this.getParamString({
-      ...params,
+    const paramString = this.getParamString(Object.assign({}, params, {
       start: 0,
       limit: 20,
-      texto: query,
-    });
+      texto: query
+    }));
 
-    //return `${protocol}//visor.grafcan.es/busquedas/toponimo/?${paramString}`;
-    return `${protocol}//demo.fonts.cat/grafcan/?${paramString}`;
+    return `${protocol}//visor.grafcan.es/busquedas/toponimo/?${paramString}`;
   }
 
   search(_ref) { // Overwrite search method, base class expects a JSON response, we have an XML response

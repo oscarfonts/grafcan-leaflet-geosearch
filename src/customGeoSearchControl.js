@@ -40,20 +40,14 @@ let Control = Object.assign(Object.create(GeoSearchControl()), {
     initialize: function (options) {
         this.markers = new L.FeatureGroup();
 
-        this.options = {
-            ...defaultOptions(),
-            ...options,
-        };
+        this.options = Object.assign({}, defaultOptions(), options);
 
         const {style, classNames, searchLabel, autoComplete, autoCompleteDelay} = this.options;
         if (style !== 'button') {
             this.options.classNames.container += ` ${options.style}`;
         }
 
-        this.searchElement = new GeoSearchElement({
-            ...this.options,
-            handleSubmit: query => this.onSubmit(query),
-        });
+        this.searchElement = new GeoSearchElement(Object.assign({}, this.options, {handleSubmit: query => this.onSubmit(query)}));
 
         const {container, form, input} = this.searchElement.elements;
         container.addEventListener('dblclick', (e) => {
